@@ -128,7 +128,7 @@ footer-hover-col: "#93c4c9"
 
 #navbar-img: "/assets/img/bgimage.png"
 #footer-img: "/assets/img/bgimage.png"
-#page-img: "/assets/img/bgimage.png"
+page-img: "/images/background_1.jpg"
 
 
 ################
