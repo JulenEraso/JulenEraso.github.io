@@ -4,7 +4,7 @@ title: About me
 subtitle: A brief personal description
 ---
 
-My name is Julen
+My name is Julen.
 
 ### Education
 
@@ -12,5 +12,4 @@ My name is Julen
 - Master in Project Management
 - Master in Health Data Science
 
-### Experience
-- Up to day
+
