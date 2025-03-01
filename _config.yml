@@ -18,10 +18,10 @@ navbar-links:
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/images/20241212_164414.jpg"
+avatar: "/images/header_webpage.webp"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
-round-avatar: true
+round-avatar: false
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
@@ -36,12 +36,12 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "julen.rodriguezeraso@gmail.com"
+  #email: "julen.rodriguezeraso@gmail.com"
   #facebook: ferranad
   github: JulenEraso
   #twitter: ferranad
   #youtube: "@ferranad"
-  linkedin: ferranaran
+  #linkedin: ferranaran
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -70,9 +70,9 @@ social-network-links:
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
+  twitter: false
+  facebook: false
+  linkedin: false
   vk: false
 
 # How to display the link to your website in the footer
@@ -115,13 +115,13 @@ page-col: "#FFFFFF"
 text-col: "#404040"
 link-col: "#008AFF"
 hover-col: "#0085A1"
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
+navbar-col: "#93c4c9"
+navbar-text-col: "#ffffff"
 navbar-border-col: "#DDDDDD"
 footer-col: "#EAEAEA"
-footer-text-col: "#777777"
+footer-text-col: "#155157"
 footer-link-col: "#404040"
-footer-hover-col: "#0085A1"
+footer-hover-col: "#93c4c9"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
