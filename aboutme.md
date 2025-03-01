@@ -4,7 +4,7 @@ title: About me
 subtitle: A brief personal description
 ---
 
-My name is Julen.
+Welcome to my website.
 
 ### Education
 
