@@ -4,7 +4,7 @@ title: First post
 subtitle: Begining
 gh-repo: daattali/beautiful-jekyll
 gh-badge: [star, fork, follow]
-tags: [first][post]
+tags: [first]
 comments: true
 mathjax: true
 author: Julen
