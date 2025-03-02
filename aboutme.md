@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: A brief personal description
+subtitle: --
 ---
 
 Welcome to my website.
