@@ -92,7 +92,7 @@ feed_show_excerpt: true
 feed_show_tags: true
 
 # Add a search button to the navbar
-post_search: true
+post_search: false
 
 # Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
 edit_page_button: true
@@ -117,7 +117,7 @@ link-col: "#008AFF"
 hover-col: "#41737a"
 navbar-col: "#93c4c9"
 navbar-text-col: "#575757"
-# navbar-border-col: "#DDDDDD"
+navbar-border-col: "#FFFFFF"
 footer-col: "#EAEAEA"
 footer-text-col: "#155157"
 footer-link-col: "#404040"
