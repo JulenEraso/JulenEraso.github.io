@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First post
-subtitle: Begining
+subtitle: Introduction
 gh-repo: daattali/beautiful-jekyll
 gh-badge: [star, fork, follow]
 tags: [first]
