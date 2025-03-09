@@ -13,25 +13,25 @@ author: Julen
 {: .box-note}
 **ABSTRACT:** 
 Pulmonary embolism (PE) is a major cause of morbidity and mortality, necessitating accurate risk stratification for effective management. The European Society of Cardiology (ESC) guidelines provide an established framework for diagnosing and treating PE, including the use of the Pulmonary Embolism Severity Index (PESI) and the risk stratification to predict 30-day mortality risk. In this study, we analyzed 368 patients with a primary diagnosis of PE from the MIMIC-III database. Using logistic regression models, we assessed the impact of demographic variables, clinical characteristics, and comorbidities on 30-day mortality.
-Findings indicate that cancer, hemodynamic instability, heart rate, and systolic blood pressure significantly impact 30-day mortality rates. Patients classified as PESI Class IV or V had a markedly higher mortality risk compared to those in lower classes. Additionally, high-risk stratification based on ESC guidelines showed a strong correlation with adverse outcomes. The model demonstrated strong predictive capability, with a receiver operating characteristic (ROC) curve analysis yielding an area under the curve (AUC) of 0.8537. These results emphasize the importance of comprehensive risk assessment in managing PE patients and highlight the need for continuous monitoring and aggressive intervention in high-risk cases.
+Findings indicate that cancer, hemodynamic instability, heart rate, and systolic blood pressure significantly impact 30-day mortality rates. Patients classified as PESI Class IV or V had a markedly higher mortality risk compared to those in lower classes. Additionally, high-risk stratification based on ESC guidelines showed a strong correlation with adverse outcomes. The model demonstrated strong predictive capability, with a receiver operating characteristic (ROC) curve analysis yielding an area under the curve (AUC) of 0.8537. These results emphasize the importance of comprehensive risk assessment in managing PE patients and highlight the need for continuous monitoring and aggressive intervention in high-risk cases.  
 
 ## Introduction
 
 Pulmonary embolism (PE) is a life-threatening condition caused by the obstruction of pulmonary arteries, and represents a major cause of morbidity and mortality, with risk stratification playing a crucial role in clinical decision-making. The European Society of Cardiology (ESC) guidelines provide a structured approach to the diagnosis and management of PE, emphasizing the importance of early risk assessment to guide treatment strategies.
 Risk stratification of patients with acute PE is mandatory for determining the appropriate therapeutic management approach. Initial risk stratification is based on clinical symptoms and signs of hemodynamic instability, which indicate a high risk of early death. In the large remaining group of patients, further risk stratification is required, and parameters such as Cardiac troponin I or T elevation in concentrations above the normal limits on admission may be associated with a worse prognosis in the acute phase of PE. 1
 Baseline parameters related to aggravating conditions and comorbidity are necessary to assess a patient’s overall mortality risk and early outcome. Of the clinical scores integrating PE severity and comorbidity, the Pulmonary Embolism Severity Index (PESI) is the one that has been most extensively validated to date. 
-Regardless of the score used, the proportion of patients with confirmed PE can be expected to be ~ 10% in the low-probability category, 30% in the moderate-probability category, and 65% in the high probability category. 2
+Regardless of the score used, the proportion of patients with confirmed PE can be expected to be ~ 10% in the low-probability category, 30% in the moderate-probability category, and 65% in the high probability category. 2  
 
-![PESI score variables and classification](/images/1.PESI-score.png){: .mx-auto.d-block :}
-_Image1 - PESI score variables and classification_{: .mx-auto.d-block :}
+![PESI score variables and classification](/images/1.PESI-score.png){: .mx-auto.d-block :}  
+_Image1 - PESI score variables and classification_{: .mx-auto.d-block :}  
 
 ## Methodology
 
 Mimic III database was used to obtain data for the cohort.
-All the admissions where the primary diagnosis (SEQ_NUM =1) was Pulmonary Embolism (ICD9 starting in 4151), were selected, and since there we more than one admission for different patients, the latest admission was selected those, obtaining 368 patients.
+All the admissions where the primary diagnosis (SEQ_NUM =1) was Pulmonary Embolism (ICD9 starting in 4151), were selected, and since there we more than one admission for different patients, the latest admission was selected those, obtaining 368 patients.  
 
-![MIMIC III cohort and variables analyzed](/images/2.Tree.png){: .mx-auto.d-block :}
-_Image 2 - MIMIC III cohort and variables analyzed_{: .mx-auto.d-block :}
+![MIMIC III cohort and variables analyzed](/images/2.Tree.png){: .mx-auto.d-block :}  
+_Image 2 - MIMIC III cohort and variables analyzed_{: .mx-auto.d-block :}  
 
 From the admissions table, considering the selected admission for each patient, the time of the admission, discharge location, and diagnosis where extracted.
 From the patients table, gender, date of birth, date of death, and dead status where extracted. Age was computed considering the admission time and the date of birth for each patient. As dates are shifted to preserve de-identification, patients with age > 89 (which in reality would be > 100), were assigned age of 100.
@@ -49,10 +49,10 @@ For the altered mental status, a search on the discharge summary was performed, 
 Hemodynamic instability was defined as the guidelines, and this information was obtained from the discharge summary notes including the events (cardiac arrest|obstructive shock| persistent hypotension). This was considered as a factor (0|1). N= 30 , na=338.
 Lastly, computing the date of death from the patients database, and comparing it with the admission date for the primary diagnosis for pulmonary embolism admission, the factor for mortality after 30 days was computed. N=51
 PESI scores were computed for each patient, based on the average values for the selected admission measurements, and the class was assigned as a five-level factor based on the results. Lastly 30-day mortality risk was computed based on the measures and logic described as a three-level factor.
-Risk stratification was performed taking into account the guidelines 1. High risk was determined as hemodynamic instability independent of the PESI classification. Intermediate risk was determined as PESI classification III – V, and troponin levels > 0,014 ng/ml. Low risk represents the rest of the cases.
+Risk stratification was performed taking into account the guidelines 1. High risk was determined as hemodynamic instability independent of the PESI classification. Intermediate risk was determined as PESI classification III – V, and troponin levels > 0,014 ng/ml. Low risk represents the rest of the cases.  
 
-![Variables and patient characteristics for patients with pulmonary embolism as primary diagnostic divided by the those that 30 days after admission were deceased](/images/3.Variables.png){: .mx-auto.d-block :}
-_Image 3 - Variables and patient characteristics for patients with pulmonary embolism as primary diagnostic divided by the those that 30 days after admission were deceased_{: .mx-auto.d-block :}
+![Variables and patient characteristics for patients with pulmonary embolism as primary diagnostic divided by the those that 30 days after admission were deceased](/images/3.Variables.png){: .mx-auto.d-block :}  
+_Image 3 - Variables and patient characteristics for patients with pulmonary embolism as primary diagnostic divided by the those that 30 days after admission were deceased_{: .mx-auto.d-block :}  
 
 ## Results
 
@@ -60,24 +60,24 @@ The logistic regression analysis identified several significant predictors of 30
 PESI classification was strongly associated with mortality outcomes. Patients classified as PESI Class V accounted for 76.9% of 30-day mortality cases. Additionally, high-risk categorization per ESC guidelines showed a significant correlation with adverse outcomes (OR: 6.61, 95% CI: 2.15–20.86, p = 0.001).
 Vital sign abnormalities also correlated with mortality risk. Higher heart rates were associated with increased risk, with non-survivors exhibiting a mean heart rate of 96.15 bpm compared to 88.57 bpm in survivors (p = 0.001). Similarly, lower systolic blood pressure was a key determinant, with an average of 105.95 mmHg in non-survivors versus 120.04 mmHg in survivors (p < 0.001). These values correlate with the thresholds dictated by the ESC guidelines. 
 Further analysis revealed that oxygen saturation (SpO2) levels were significantly lower in non-survivors (95.19% vs. 96.16%, p = 0.025). Troponin levels, while elevated in some patients, did not reach statistical significance in predicting mortality (p = 0.794). Due to these results, the variables were not included in the model directly, but are present in the risk stratification and PESI score.
-The presence of altered mental status was more frequent in non-survivors (17.3% vs. 9.8%), although this association was not statistically significant (p = 0.171).
+The presence of altered mental status was more frequent in non-survivors (17.3% vs. 9.8%), although this association was not statistically significant (p = 0.171).  
 
-![Logistic regression analysis of the PESI classification and risk factor to 30 day mortality](/images/4.Results.png){: .mx-auto.d-block :}
-_Image 4 - Logistic regression analysis of the PESI classification and risk factor to 30 day mortality_{: .mx-auto.d-block :}
+![Logistic regression analysis of the PESI classification and risk factor to 30 day mortality](/images/4.Results.png){: .mx-auto.d-block :}  
+_Image 4 - Logistic regression analysis of the PESI classification and risk factor to 30 day mortality_{: .mx-auto.d-block :}  
 
-![Odds ratios and 95% CI for the variables analyzed](/images/4.1.Results.png){: .mx-auto.d-block :}
-_Image 5 - Odds ratios and 95% CI for the variables analyzed_{: .mx-auto.d-block :}
+![Odds ratios and 95% CI for the variables analyzed](/images/4.1.Results.png){: .mx-auto.d-block :}  
+_Image 5 - Odds ratios and 95% CI for the variables analyzed_{: .mx-auto.d-block :}  
 
-Receiver operating characteristic (ROC) curve analysis confirmed the strong predictive capability of the logistic regression model, with an area under the curve (AUC) of 0.8537, suggesting excellent discrimination between survivors and non-survivors. These findings reinforce the reliability of PESI and ESC guidelines in assessing 30-day mortality risk in PE patients.
+Receiver operating characteristic (ROC) curve analysis confirmed the strong predictive capability of the logistic regression model, with an area under the curve (AUC) of 0.8537, suggesting excellent discrimination between survivors and non-survivors. These findings reinforce the reliability of PESI and ESC guidelines in assessing 30-day mortality risk in PE patients.  
 
-![Accuracy for predicting 30 day mortality by receiver operator characteristics (ROC) analysis. AUC= 0.8537](/images/5.AUC.png){: .mx-auto.d-block :}
-_Image 6 - Accuracy for predicting 30 day mortality by receiver operator characteristics (ROC) analysis. AUC= 0.8537_{: .mx-auto.d-block :}
+![Accuracy for predicting 30 day mortality by receiver operator characteristics (ROC) analysis. AUC= 0.8537](/images/5.AUC.png){: .mx-auto.d-block :}  
+_Image 6 - Accuracy for predicting 30 day mortality by receiver operator characteristics (ROC) analysis. AUC= 0.8537_{: .mx-auto.d-block :}  
 
 ## Discussion
 
 This study highlights the critical importance of early risk stratification in patients with PE. Our findings reaffirm previous research indicating that PESI classification and ESC risk stratification are highly effective in predicting short-term mortality risk. The strong association between cancer and mortality aligns with prior studies. 
 The predictive model demonstrated strong accuracy, with an AUC of 0.8537, indicating excellent discriminative power. This suggests that integrating vital sign parameters, PESI classification, and comorbidities into a comprehensive risk assessment model can enhance early identification of high-risk patients and improve clinical outcomes.
-Despite these strengths, the study has limitations. Vital signs data was mostly available but factor such as temperature, troponin levels or specific imaging characteristics could be extended and are dependable on the admission. 
+Despite these strengths, the study has limitations. Vital signs data was mostly available but factor such as temperature, troponin levels or specific imaging characteristics could be extended and are dependable on the admission.   
 
 
 ## Bibliography
