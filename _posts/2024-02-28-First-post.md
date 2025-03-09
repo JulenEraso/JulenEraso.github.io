@@ -17,7 +17,7 @@ Welcome to the first post of the website.
 
 Data science is the field of study that uses mathematics, programming, and domain knowledge to extract meaningful insights from data. Data scientists would apply machine learning algorithms to data such as numbers, texts, images, videos, and more to produce artificial systems that perform tasks that require human intelligence. Using these systems, we extract insights from the data and use them to make better decisions in various situations.
 
-![DataScience](https://miro.medium.com/v2/resize:fit:730/0*POjH5vv_7t8s8loG)
+![DataScience](https://miro.medium.com/v2/resize:fit:730/0*POjH5vv_7t8s8loG){: .mx-auto.d-block :}
 
 Data science combines math and statistics, specialized programming, advanced analytics, artificial intelligence (AI) and machine learning with specific subject matter expertise to uncover actionable insights hidden in an organization’s data. These insights can be used to guide decision making and strategic planning.
 
